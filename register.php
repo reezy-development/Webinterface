@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="card">
-        <img src="logo.png" alt="OpenAI" class="logo">
+        <img src="img/logo.png" alt="OpenAI" class="logo">
         <form method="post">
         <?php if (isset($fehlermeldung)): ?>
             <div class="error"><?php echo $fehlermeldung; ?></div>
