@@ -1,5 +1,6 @@
 <?php
-require 'dbconnect.php';
+require 'mysql/dbconnect.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $benutzername = $_POST['benutzername'];

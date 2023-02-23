@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'dbconnect.php';
+require '../mysql/dbconnect.php';
 
 // Überprüfen, ob der Benutzer angemeldet ist
 if (!isset($_SESSION['benutzername'])) {
@@ -18,24 +18,24 @@ $row = $result->fetch_assoc();
 $benutzername = $row['benutzername'];
 $profilbild = $row['profilbild'];
 $rang = $row['rang'];
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>Settings</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 <div class="sidebar">
     <div class="logo">
-        <img src="img/logo.png" alt="OpenAI">
+        <img src="../img/logo.png" alt="OpenAI">
         <h1>Webinterface</h1>
     </div>
     <div class="nav">
-        <a href="index.php">Dashboard</a>
-        <a href="#">Messages</a>
-        <a href="#" class="active">Settings</a>
-        <a href="#">Support</a>
+        <a href="#" class="active">Dashboard</a>
+        <a href="users.php">Users</a>
+        <a href="settings.php">Settings</a>
     </div>
     <div class="profile">
         <img src="<?php echo $profilbild ?>" alt="Profile">
@@ -43,9 +43,9 @@ $rang = $row['rang'];
         <button onclick="window.location.href='logout.php'">Logout</button>
     </div>
 </div>
-<div class="settings">
-    <h1>Settings</h1>
-    <p>Here are your settings</p>
+<div class="dashboard">
+    <h1>Dashboard</h1>
+    <p>Data</p>
 </div>
 </body>
 </html>
